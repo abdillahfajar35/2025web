@@ -6,6 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-     <h1>DATA MAHASISWA gugugaga</h1>
+     <h1>DATA MAHASISWA</h1>
+     <br>
+     <table border ="1" cellspacing="0" cellpading="5">
+        <thead>
+            <tr>
+            <th>No</th>
+            <th>NIM</th>
+            <th>Nama</th>
+            </tr>
+        </thead>
+    </tbody>
+        <tr>
+            <td>1</td>
+            <td>E020323096</td>
+            <td>Muhammad Fajar Abdillah</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>E020323099</td>
+            <td>Muhammad Satrio</td>
+        </tr>
+</tbody>
+</table>
 </body>
 </html>
