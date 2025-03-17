@@ -1,3 +1,22 @@
+<?php
+$servername = "localhost";
+$database = "mahasiswa";
+$username = "root";
+$password = "";
+
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+$query = "SELECT * FROM mahasiswa";
+$hasil = mysqli_query($conn, $query);
+
+$data = mysqli_fetch_assoc($hasil);
+
+// var_dump($data);
+// die;
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,18 +35,19 @@
             <th>Nama</th>
             </tr>
         </thead>
-    </tbody>
+
+    <tbody>
+    <?php
+    $i = 1;
+    foreach ($data as $d) : ?>
         <tr>
-            <td>1</td>
-            <td>E020323096</td>
-            <td>Muhammad Fajar Abdillah</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>E020323099</td>
-            <td>Muhammad Satrio</td>
-        </tr>
-</tbody>
+            <td> <?php echo $i++; ?> </td>
+            <td> <?php echo $d["nim"] ?> </td>
+            <td> <?php echo $d["nama"] ?> </td>
+        </tr>   
+    <?php endforeach; ?>
+
+</tbody> 
 </table>
 </body>
 </html>
