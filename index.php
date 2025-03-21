@@ -23,6 +23,9 @@ $data = ambildata($query);
             <th>No</th>
             <th>NIM</th>
             <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>No Telp</th>
+            <th>Email</th>
             </tr>
         </thead>
 
@@ -34,6 +37,9 @@ $data = ambildata($query);
             <td> <?php echo $i++; ?> </td>
             <td> <?php echo $d["nim"] ?> </td>
             <td> <?php echo $d["nama"] ?> </td>
+            <td> <?php echo $d["tanggal_lahir"] ?> </td>
+            <td> <?php echo $d["no_telp"] ?> </td>
+            <td> <?php echo $d["email"] ?> </td>
         </tr>   
     <?php endforeach; ?>
 
