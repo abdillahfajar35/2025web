@@ -17,6 +17,7 @@ $data = ambildata($query);
 <body>
      <h1>DATA MAHASISWA</h1>
      <br>
+     <a href="tambahmahasiswa.php">Tambah Data</a>
      <table border ="1" cellspacing="0" cellpading="5">
         <thead>
             <tr>
