@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    //echo $_SESSION['login'];
+    header("Location: login.html");
+}
+
 include "koneksi.php";
 
 $query = "SELECT mahasiswa.*, prodi.nama AS NamaProdi
@@ -19,6 +25,7 @@ $data = ambildata($query);
      <br>
      <a href="tambahmahasiswa.php">Tambah Data</a>
      <table border ="1" cellspacing="0" cellpading="5">
+    
         <thead>
             <tr>
             <th>No</th>
@@ -54,5 +61,6 @@ $data = ambildata($query);
 
 </tbody> 
 </table>
+<a href="logout.php">Keluar</a>
 </body>
 </html>
