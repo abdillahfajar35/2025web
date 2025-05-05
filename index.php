@@ -11,56 +11,61 @@ $query = "SELECT mahasiswa.*, prodi.nama AS NamaProdi
     FROM mahasiswa
     LEFT JOIN prodi ON mahasiswa.id_prodi = prodi.id";
 $data = ambildata($query);
+
+
+include "template/header.php";
+include "template/sidebar.php";
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-     <h1>DATA MAHASISWA</h1>
-     <br>
-     <a href="tambahmahasiswa.php">Tambah Data</a>
-     <table border ="1" cellspacing="0" cellpading="5">
-    
-        <thead>
-            <tr>
-            <th>No</th>
-            <th>NIM</th>
-            <th>Nama</th>
-            <th>Tanggal Lahir</th>
-            <th>No Telp</th>
-            <th>Email</th>
-            <th>id_prodi</th>
-            <th>nama_prodi</th>
-            <th>Aksi</th>
-            </tr>
-        </thead>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 class="card-title">Data Mahasiswa</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>Tanggal Lahir</th>
+                            <th>No Telp</th>
+                            <th>Email</th>
+                            <th>Id Prodi</th>
+                            <th>Nama Prodi</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    </tbody>
 
-    <tbody>
-    <?php
-    $i = 1;
-    foreach ($data as $d) : ?>
-        <tr>
-            <td> <?php echo $i++; ?> </td>
-            <td> <?php echo $d["nim"] ?> </td>
-            <td> <?php echo $d["nama"] ?> </td>
-            <td> <?php echo $d["tanggal_lahir"] ?> </td>
-            <td> <?php echo $d["no_telp"] ?> </td>
-            <td> <?php echo $d["email"] ?> </td>
-            <td> <?php echo $d["id_prodi"] ?> </td>
-            <td> <?php echo $d["NamaProdi"] ?> </td>
-            <td><a href="deletemahasiswa.php?nim=<?= $d['nim']; ?>"
-            onclick="return confirm('Yakin ingin hapus?')">Delete</a> |
-            <a href="editmahasiswa.php?nim=<?= $d['nim']; ?>">Edit</a></
-        </tr>   
-    <?php endforeach; ?>
+                    <?php
+                    $i = 1;
+                    foreach ($data as $d) : ?>
+                        <tr>
+                            <td> <?php echo $i++; ?> </td>
+                            <td> <?php echo $d["nim"] ?> </td>
+                            <td> <?php echo $d["nama"] ?> </td>
+                            <td> <?php echo $d["tanggal_lahir"] ?> </td>
+                            <td> <?php echo $d["no_telp"] ?> </td>
+                            <td> <?php echo $d["email"] ?> </td>
+                            <td> <?php echo $d["id_prodi"] ?> </td>
+                            <td> <?php echo $d["NamaProdi"] ?> </td>
+                            <td><a href="deletemahasiswa.php?nim=<?= $d['nim']; ?>"
+                                    onclick="return confirm('Yakin ingin hapus?')" class="btn btn-danger">Delete</a> |
+                                <a href="editmahasiswa.php?nim=<?= $d['nim']; ?>" class="btn btn-warning">Edit</a></
+                                    </tr>
+                            <?php endforeach; ?>
 
-</tbody> 
-</table>
-<a href="logout.php">Keluar</a>
-</body>
-</html>
+                </table>
+            </div>
+
+
+            </body>
+
+            </html>
+            <?php
+            include "template/footer.php";
