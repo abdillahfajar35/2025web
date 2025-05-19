@@ -28,7 +28,7 @@ include "template/sidebar.php";
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        <li class="breadcrumb-item active" aria-current="page">Data Mahasiswa</li>
                     </ol>
                 </div>
                 <div class="app-content">
@@ -38,6 +38,9 @@ include "template/sidebar.php";
                                 <div class="card mb-4">
                                     <div class="card-header">
                                         <h3 class="card-title">Data Mahasiswa</h3>
+                                        <div class="card-tools">
+                                            <a href="tambahmahasiswa.php" class="btn btn-primary">Tambah</a>
+                                        </div>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
@@ -80,5 +83,7 @@ include "template/sidebar.php";
                                         </table>
                                     </div>
 </main>
+
 <?php
 include "template/footer.php";
+?>

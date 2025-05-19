@@ -24,7 +24,7 @@ include "template/sidebar.php";
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        <li class="breadcrumb-item active" aria-current="page">Data Prodi</li>
                     </ol>
                 </div>
                 <div class="app-content">
